@@ -13,6 +13,7 @@ To get Gekko running you need to do the following:
 - install nodejs
 - download Gekko
 - install Gekko's dependencies
+- install Gekko's UI dependencies
 
 ## Installing nodejs
 
@@ -33,6 +34,20 @@ Once it is installed we need to install Gekko's dependencies, open your terminal
 
     npm install --only=production
 
+## Installing Gekko UI dependencies
+
+Since the UI is independent we need to go through a build process for the UI as well.
+To install the dependencies and build the UI navigate to your gekko folder and run:
+
+    cd web/vue
+    npm install
+    npm run build
+    
+After those actions navigate back to your gekko folder to continue with the next steps.
+
+For more information visit: 
+https://github.com/askmike/gekko/blob/stable/web/vue/README.md
+
 ## Starting Gekko
 
 After all the above you can start Gekko by running the following in your terminal:
@@ -45,5 +60,7 @@ If you installed Gekko via git, simply run:
 
     git pull
     npm install --only=production
+    
+If you want to update the UI follow the steps mentioned in [Installing Gekko UI dependencies](#markdown-header-installing-gekko-ui-dependencies)
 
 If you downloaded the zip you can just download the new version. If you want to move historical data over (for backtesting purposes), copy the constents of the `history` folder found inside the gekko folder. If you have written your own strategies, don't forget to move them over as well.
