@@ -17,6 +17,9 @@ RUN npm install redis@0.10.0 talib@1.0.2 pg
 # Bundle app source
 COPY . /usr/src/app
 
+# Build the UI
+RUN cd /usr/src/app/web/vue && npm install && npm run build && cd /usr/src/app
+
 RUN chmod +x /usr/src/app/docker-entrypoint.sh
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
 
